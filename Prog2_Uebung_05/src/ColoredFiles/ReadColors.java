@@ -15,18 +15,22 @@ public class ReadColors {
 	
 	public ReadColors() throws IOException {
 		
-			//TODO
-		
-		
-		
-		
-		
-		
-		
-		
+			
+			// local txt-file "RGBNumber.txt" is created in program folder
+			File file = new File("RGBNumber.txt");
+			file.createNewFile();
+			
+			FileWriter fw = new FileWriter(file);
+			write = new BufferedWriter(fw);
+			
+			for(int i=0; i<100; i++){
+				// (int) (Math.random()*256) : returns a random int between 0 and 256
+				write.write( ((int) (Math.random()*256)) + ", " );
+				write.write( ((int) (Math.random()*256)) + ", " );
+				write.write( ((int) (Math.random()*256)) + "\n" );
+			}
+			
 			write.close();
-		
-		
 	}
 
 	public static void main(String[] args) {
