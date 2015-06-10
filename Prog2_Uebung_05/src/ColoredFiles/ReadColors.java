@@ -23,10 +23,10 @@ public class ReadColors {
 			FileWriter fw = new FileWriter(file);
 			write = new BufferedWriter(fw);
 			
-			for(int i=0; i<100; i++){
+			for(int i=0; i<5; i++){
 				// (int) (Math.random()*256) : returns a random int between 0 and 256
-				write.write( ((int) (Math.random()*256)) + ", " );
-				write.write( ((int) (Math.random()*256)) + ", " );
+				write.write( ((int) (Math.random()*256)) + "," );
+				write.write( ((int) (Math.random()*256)) + "," );
 				write.write( ((int) (Math.random()*256)) + "\n" );
 			}
 			
