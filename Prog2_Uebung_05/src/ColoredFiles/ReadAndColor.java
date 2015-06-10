@@ -28,9 +28,9 @@ public class ReadAndColor {
 		createGui(c);
 	}
 
-	private void createGui(Color[] c) {
+	private void createGui(final Color[] c) {
 		JFrame frame = new JFrame("Colored");
-		JLabel label = new JLabel("Color");
+		final JLabel label = new JLabel("Color");
 		frame.add(label);
 		
 		/* 
@@ -38,7 +38,19 @@ public class ReadAndColor {
 		 * make rColor the labels color for text
 		*/
 		Color rColor = c[ (int) (Math.random()*c.length) ];
+		
 		label.setForeground(rColor);
+		
+		frame.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				super.mouseClicked(e);
+				
+				int random = (int) (Math.random()*c.length);
+				Color color = c[random];
+				label.setForeground(color);
+			}
+		});
 		
 		frame.setVisible(true);
 		frame.setSize(200, 200);
