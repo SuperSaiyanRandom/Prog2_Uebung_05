@@ -21,14 +21,14 @@ public class TXTtoZIP {
 	public TXTtoZIP() {
 		
 		txtFile = createTXTFile("aufgabe2_4.txt");
-		zipFile = createZipFile("aufgabe2_4.zip");
+		zipFile = createZipFile("aufgabe2_4.zip", txtFile);
 		
 		System.out.println("Erfolgreich verpackt");
 	}
 	
-	public File createZipFile(String filename) {
+	public File createZipFile(String zipFileName, File txtFile) {
 		try {
-			File zipFile = new File(filename);
+			File zipFile = new File(zipFileName);
 			
 			zos = new ZipOutputStream(
 					new BufferedOutputStream(
